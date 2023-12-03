@@ -13,14 +13,14 @@ class Iconwidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: Get.height * .008),
       height: Get.height * .05,
       decoration: BoxDecoration(
-          border: Border.all(color: greycolor),
+          border: Border.all(color: greyColor),
           borderRadius: BorderRadius.circular(10)),
       child: Column(
         children: [
           Icon(
             icon,
             size: Get.height * .024,
-            color: greycolor,
+            color: greyColor,
           ),
           Text(
             text,

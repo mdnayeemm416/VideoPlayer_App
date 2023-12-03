@@ -1,26 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-const blackcolor = Color(0xFF1A202C);
-const greycolor = Color(0xFF718096);
+const blackColor = Color(0xFF1A202C);
+const greyColor = Color(0xFF718096);
+const blueColor = Color(0xFF3898FC);
 
 final headingStyle = TextStyle(
   fontSize: Get.height * .020,
-  color: blackcolor,
+  color: blackColor,
   fontWeight: FontWeight.w700,
 );
 final titleStyle = TextStyle(
   fontSize: Get.height * .015,
-  color: blackcolor,
+  color: blackColor,
   fontWeight: FontWeight.w600,
+  fontFamilyFallback: const ['Mukta', 'Roboto'],
 );
 final subtitleStyle = TextStyle(
   fontSize: Get.height * .013,
-  color: greycolor,
+  color: greyColor,
   fontWeight: FontWeight.w400,
+);
+final channelStyle = TextStyle(
+  fontSize: Get.height * .014,
+  color: blackColor,
+  fontWeight: FontWeight.w500,
 );
 final timeStyle = TextStyle(
   fontSize: Get.height * .012,
+  color: Colors.white,
+  fontWeight: FontWeight.w500,
+);
+final subscribeStyle = TextStyle(
+  fontSize: Get.height * .015,
   color: Colors.white,
   fontWeight: FontWeight.w500,
 );

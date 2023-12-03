@@ -3,21 +3,20 @@ import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 import 'package:http/http.dart' as http;
 import 'package:video_player_app/Models/trending_video_model.dart';
-part 'trending_vieobloc_event.dart';
-part 'trending_vieobloc_state.dart';
+part 'trending_video_event.dart';
+part 'trending_video_state.dart';
 
-class TrendingVieoblocBloc
-    extends Bloc<TrendingVieoblocEvent, TrendingVieoblocState> {
-  TrendingVieoblocBloc() : super(TrendingVieoblocInitial()) {
-    on<TreningVideosInitialFetchEvent>(treningVideosInitialFetchEvent);
+class TrendingVideoBloc extends Bloc<TrendingVideoEvent, TrendingVideoState> {
+  TrendingVideoBloc() : super(TrendingVideoInitial()) {
+    on<TrendingVideosInitialFetchEvent>(trendingVideosInitialFetchEvent);
+    on<TrendingVideoTitleClickEvent>(trendingVideoTitleClickEvent);
   }
 
-  Future<FutureOr<void>> treningVideosInitialFetchEvent(
-      TreningVideosInitialFetchEvent event,
-      Emitter<TrendingVieoblocState> emit) async {
+  Future<FutureOr<void>> trendingVideosInitialFetchEvent(
+      TrendingVideosInitialFetchEvent event,
+      Emitter<TrendingVideoState> emit) async {
     var client = http.Client();
     try {
       var response = await client.get(
@@ -40,4 +39,7 @@ class TrendingVieoblocBloc
       client.close();
     }
   }
+
+  FutureOr<void> trendingVideoTitleClickEvent(
+      TrendingVideoTitleClickEvent event, Emitter<TrendingVideoState> emit) {}
 }
